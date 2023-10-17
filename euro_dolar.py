@@ -1,11 +1,11 @@
 # Programa que captura e imprime os valores do dólar e do euro no momento atual.
-# Se o computador for lento, use pyautogui.sleep(segundos) em alguns trechos do código para esperar o computador processar.
+# Se o computador for lento, use pyautogui.sleep() em alguns trechos do código para esperar o computador processar.
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pyautogui
-import xlsxwriter
-import os
+# import xlsxwriter
+# import os
 
 
 # Abre o Chrome na página do Google.
@@ -37,6 +37,7 @@ euro_hoje_google = chrome.find_element(By.XPATH, xpath_euro).text
 euro_hoje_google = euro_hoje_google.replace(",", ".")
 euro_hoje_google = float(euro_hoje_google)
 
+# Fecha o navegador.
 chrome.close()
 
 # Imprime os valores.
