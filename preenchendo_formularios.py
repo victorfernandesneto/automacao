@@ -1,9 +1,10 @@
+# Programa que preenche formulários na internet com dados de planilhas do Excel.
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pyautogui
 from openpyxl import load_workbook
 
-caminho_arquivo = r"C:\planilhas\Lutadores.xlsx"
+caminho_arquivo = "Lutadores.xlsx"
 planilha_lutadores = load_workbook(filename=caminho_arquivo)
 
 planilha_selecionada = planilha_lutadores['Dados']
@@ -50,3 +51,5 @@ for i in range(2, len(planilha_selecionada['A']) + 1):  # De 2 porque o A1, B1, 
 
     # Finalizando o formulário
     botao_concluido.click()
+    pyautogui.sleep(.1)
+    chrome.close()

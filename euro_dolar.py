@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pyautogui
-# import xlsxwriter
+import xlsxwriter
 # import os
 
 
@@ -44,17 +44,17 @@ chrome.close()
 print(f'Dólar hoje = {dolar_hoje_google} reais')
 print(f'Euro hoje = {euro_hoje_google} reais')
 
-# # Se quiser imprimir os valores em uma planilha Excel, descomente o código abaixo.
-# caminho_arquivo = r"C:\planilhas\Dolar e Euro Google.xlsx"
-# planilha_criada = xlsxwriter.Workbook(caminho_arquivo)
-# planilha1 = planilha_criada.add_worksheet()
-#
-# planilha1.write("A1", "Dólar")
-# planilha1.write("B1", "Euro")
-# planilha1.write("A2", dolar_hoje_google)
-# planilha1.write("B2", euro_hoje_google)
-#
-# planilha_criada.close()
-#
-# # Abrir o arquivo pronto.
-# os.startfile(caminho_arquivo)
+# Se quiser imprimir os valores em uma planilha Excel, descomente o código abaixo.
+caminho_arquivo = "./assets/Euro Dolar Hoje.xlsx"
+planilha_criada = xlsxwriter.Workbook(caminho_arquivo)
+planilha1 = planilha_criada.add_worksheet()
+
+planilha1.write("A1", "Dólar")
+planilha1.write("B1", "Euro")
+planilha1.write("A2", dolar_hoje_google)
+planilha1.write("B2", euro_hoje_google)
+
+planilha_criada.close()
+
+# # Descomente a linha abaixo se quiser abrir o arquivo após inserir. É necessário colocar um caminho C:\ válido.
+# os.open(caminho_arquivo)
