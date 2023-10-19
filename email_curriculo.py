@@ -27,18 +27,18 @@ def envia_curriculo():
     # Corpo do email criado a partir das variáveis dadas pelo usuário.
     corpo_do_email = f'''Prezados,
     
-    Espero que esta mensagem encontre você bem. Gostaria de expressar meu interesse na posição de {nome_da_vaga}.
+Espero que esta mensagem encontre você bem. Gostaria de expressar meu interesse na posição de {nome_da_vaga}.
     
-    Anexo a este e-mail, você encontrará o meu currículo, que fornece mais informações sobre a minha formação acadêmica e histórico de trabalho.
+Anexo a este e-mail, você encontrará o meu currículo, que fornece mais informações sobre a minha formação acadêmica e histórico de trabalho.
     
-    Estou muito animado com a oportunidade de fazer parte do corpo docente e contribuir para o sucesso da equipe. Gostaria de discutir mais sobre como minhas habilidades e experiência podem beneficiar sua organização. Por favor, sinta-se à vontade para entrar em contato comigo por e-mail ({seu_email}) ou por telefone ({seu_telefone}) para agendar uma conversa.
+Estou muito animado com a oportunidade de fazer parte do corpo docente e contribuir para o sucesso da equipe. Gostaria de discutir mais sobre como minhas habilidades e experiência podem beneficiar sua organização. Por favor, sinta-se à vontade para entrar em contato comigo por e-mail ({seu_email}) ou por telefone ({seu_telefone}) para agendar uma conversa.
     
-    Agradeço pela atenção.
+Agradeço pela atenção.
     
-    Atenciosamente,
-    {seu_nome}
-    {seu_telefone}
-    {seu_email}'''
+Atenciosamente,
+{seu_nome}
+{seu_telefone}
+{seu_email}'''
 
 
     # Os emails para envio na .env devem estar separados somente por vírgulas.
@@ -73,10 +73,11 @@ def envia_curriculo():
     copia_cola(corpo_do_email)
     pyautogui.sleep(.5)
     pyautogui.press('tab', presses=3)
-    pyautogui.press('enter')
+    pressiona_enter()
     pyautogui.sleep(.5)
     copia_cola(caminho_curriculo)
-    pyautogui.press('enter')
+    pressiona_enter()
+    pyautogui.sleep(10)
     pyautogui.hotkey('ctrl', 'enter')
 
 
